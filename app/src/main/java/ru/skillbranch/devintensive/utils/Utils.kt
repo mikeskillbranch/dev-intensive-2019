@@ -41,8 +41,8 @@ object Utils {
         return String(charArrayOf(firstLetter, secondLetter))
     }
 
-    fun transliteration(payload: String?, divider: String = " "): String? {
-        payload ?: return null
+    fun transliteration(payload: String?, divider: String = " "): String {
+        payload ?: return ""
 //        val parts = payload.split(" ")
         val parts = payload.split(Regex("[\\s]|[$divider]|[_]|[-]"))
         var fName = parts.getOrNull(0)
