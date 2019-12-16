@@ -43,7 +43,8 @@ object Utils {
 
     fun transliteration(payload: String?, divider: String = " "): String? {
         payload ?: return null
-        val parts = payload.split(" ")
+//        val parts = payload.split(" ")
+        val parts = payload.split(Regex("[\\s]|[$divider]|[_]"))
         var fName = parts.getOrNull(0)
         var sName = parts.getOrNull(1)
         val transFName = mutableListOf<String>()
